@@ -19,12 +19,12 @@ function update(){
     typing = "";
     cutTime = 0;
     wpm = 0;
-    chrome.storage.local.set({'time':wpm});
+    chrome.storage.local.set({'time': wpm});
 }
 
 document.addEventListener("visibilitychange", function () {
     if(!document.hidden) {
-        chrome.storage.local.set({'time':wpm});
+        chrome.storage.local.set({'time': wpm});
         chrome.runtime.sendMessage({
             speed: wpm,
         });
@@ -33,7 +33,7 @@ document.addEventListener("visibilitychange", function () {
 
 window.addEventListener('load', (event) => {
     if(!document.hidden) {
-        chrome.storage.local.set({'time':wpm});
+        chrome.storage.local.set({'time': wpm});
         chrome.runtime.sendMessage({
             speed: wpm
         });
@@ -43,15 +43,15 @@ window.addEventListener('load', (event) => {
 function myInput(event){
     var input = event.which || event.keyCode;
     if(input != 13 && input != 17 && input != 18){
-        if(typing.length == 0) {
+        if(typing.length == 0){
             masterStart = window.performance.now();
             start = window.performance.now();
         }
-        end = window.performance.now;
+        end = window.performance.now();
         elapsed = end - start;
         start = window.performance.now();
 
-        if ( elapsed > 1000) {
+        if (elapsed > 1000) {
             cutTime += elapsed;
         }
 
@@ -60,7 +60,7 @@ function myInput(event){
             typing = typing + typed;
         }
         else {
-            typing = typing.slice(0, typing.length-1);
+            typing = typing.slice(0, typing.length - 1);
         }
 
         masterElapsed = window.performance.now() - masterStart;
@@ -71,6 +71,6 @@ function myInput(event){
             speed: wpm
         });
 
-        chrome.storage.local.set({'time':wpm});
+        chrome.storage.local.set({'time': wpm});
     }
 }
