@@ -1,4 +1,30 @@
 {
     "manifest_version": 2,
-    "name": "type speed"
+    "name": "type speed",
+    "version":"1",
+    "description": "get your active wpm",
+
+    "browser_action": {
+        "default__popup": "popup.html",
+        "default_icon": "typer.png"
+    },
+
+    "permissions":[
+        "storage",
+        "activeTab",
+        "tabs"
+    ],
+
+    "content_scripts": [
+        {
+            "matches":["http://*/*", "https://*/*"],
+            "js":["content_scripts.js"]
+        }
+    ],
+
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    }
+
 }
