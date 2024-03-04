@@ -37,7 +37,7 @@ function updatePopup(){
         var url = tabs[0].url;
         if(url == "chrome://newtab/"){
             document.getElementById("wpm").innerHTML = "Unavailable";
-            chrome.browserAction.setIcon({path: "typer.png"});
+            chrome.browserAction.setIcon({path: "assets/typer.png"});
         }
     });
 }

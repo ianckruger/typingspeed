@@ -6,7 +6,7 @@
 
     "browser_action": {
         "default__popup": "popup.html",
-        "default_icon": "typer.png"
+        "default_icon": "assets/typer.png"
     },
 
     "permissions":[

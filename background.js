@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if ( request.msg === "hello" ) {
             chrome.tabs.executeScript(null, { code:"update();"});
-            chrome.browserAction.setIcon({path:"typer.png"});
+            chrome.browserAction.setIcon({path:"assets/typer.png"});
         }
     }
 );
@@ -14,6 +14,6 @@ chrome.runtime.onMessage.addListener(
             chrome.browserAction.setIcon({path: name});
         }
         else {
-            chrome.browserAction.setIcon({path: "typer.png"});
+            chrome.browserAction.setIcon({path: "assets/typer.png"});
         }
     });
