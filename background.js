@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if(request.speed < 230 && request.speed > 10) {
-            let name = "wmpicons/artboard" + (request.speed - 9) + ".png";
+            let name = "assets/wmpicons/artboard " + (request.speed - 9) + ".png";
             chrome.browserAction.setIcon({path: name});
         }
         else {
